@@ -11,10 +11,8 @@ app.use(cors());
 // app.use(express.json());
 
 const upload = multer({
-    dest: path.join(__dirname, '../uploads/'), // you can change this path
+    dest: path.join(__dirname, '../uploads/'), 
 });
-
-// {type, errorCode: -1, errorMessage, erroredProperties: [columns, criteria], message}
 
 const mockResponses: Record<string, any> = {
     success: { errorCode: -1, errorMessage: null, erroredProperties:[], message: customResponse['unstructured-success']},
@@ -40,5 +38,6 @@ app.post('/submitPrompt', upload.array('files'), (req: Request, res: Response) =
 });
 
 app.listen(port, () => {
-    console.log(`🚀 Mock server running at http://localhost:${port}`);
+    console.log(`Mock server running at http://localhost:${port}`);
 });
+
