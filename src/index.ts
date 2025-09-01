@@ -21,7 +21,7 @@ const mockResponses: Record<string, any> = {
     csvFailed: { errorCode: 2, message: null, erroredProperties:["Transaction_ID", "Date", "Account_Number", "Amount", "Currency", "Transaction_Type"], errorMessage: customResponse['csv-failed']},
 };
 
-app.post('/submitPrompt', upload.array('files'), (req: Request, res: Response) => {
+app.post('/submitPrompt', (req: Request, res: Response) => {
     const responseToggle = req.body.responseToggle;
 
     console.log('Received responseToggle:', responseToggle);
